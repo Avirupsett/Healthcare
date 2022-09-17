@@ -1,0 +1,26 @@
+@media screen and (max-width: 999px) {
+    .w_image{
+        display: none;
+        visibility: hidden;
+    }
+    .head{
+        padding: 0 4.2rem;
+    }
+    .r_size{
+        font-size: 2.6rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .r_size{
+        font-size: 2rem;
+    }
+    .t_size{
+        font-size: 1.2rem !important;
+    }
+}
+.btn_hover:hover{
+   background-color: var(--white-color) !important; 
+   color: var(--first-color) !important;
+   transition: all 0.3s ease-in-out 0s;
+}
+
