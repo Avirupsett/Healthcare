@@ -3,9 +3,14 @@
         padding: 0 1.2rem;
     }
     .selected{
-        font-size: 12px!important;
+        font-size: 14px!important;
     }
     .selected2{
         font-size: 18px!important;
     }
+    
+}
+
+.rmsc {
+    --rmsc-main: var(--first-color-light) !important;
 }
