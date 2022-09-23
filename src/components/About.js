@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../assets/aboutlogo.png'
+import img from '../assets/aboutlogo_blue.png'
 import './About.css'
 
 export default function About() {
@@ -8,11 +8,11 @@ export default function About() {
             <div className='container' id="info">
             <div className="row  mb-5 flex-lg-row-reverse align-items-center about">
                 <div className="col-xl-6 col-lg-5 mb-4 mb-md-0 w_image pe-0">
-                    <img src={img} className="mb-1" alt="" style={{ width: "60%", marginLeft: '110px', border: '2px solid #e12454', borderRadius: '50%', padding: '25px' }} data-builder-edit="image" data-builder-name="image1" aria-controls="#picker-editor" />
+                    <img src={img} className="mb-1" alt="" style={{ width: "60%", marginLeft: '120px', border: '2px solid var(--first-color)', borderRadius: '50%', padding: '25px' }} data-builder-edit="image" data-builder-name="image1" aria-controls="#picker-editor" />
                 </div>
                 <div className="col-xl-6 col-lg-7 gx-md-1 mb-4 mb-md-0 ">
                     <div style={{marginBottom:"20px"}}>
-                        <h5 className='fs-4 fw-bolder' style={{marginBottom:"27px",color:"#647589",fontFamily:"SF Mono"}}>About</h5>
+                        <h5 className='fs-4 fw-bolder' style={{marginBottom:"27px",color:"var(--first-color)",fontFamily:"SF Mono"}}>About</h5>
                         <h1 className='display-2' style={{color:"#223645",fontFamily:"Calibre S",lineHeight:1.1,letterSpacing:'-2px'}}>A Brief Idea About the Project</h1>
                     </div>
                     <p className='pa-1' style={{color:"#647589",fontSize:"18px",fontFamily:"Calibre R"}}>The project <strong>Efficient Automated Multiple Disease Diagnosis System (EAMDDS)</strong> aims to implement a robust machine learning model that can efficiently predict the disease of a human, based on the symptoms that he/she posses. An end-to-end process is used where people must enter their details in the web-portal and submit the data. The real-time processing takes place, and the risk is predicted within a few seconds.

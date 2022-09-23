@@ -10,12 +10,30 @@
         font-size: 2.6rem;
     }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     .r_size{
-        font-size: 2rem;
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
     }
     .t_size{
-        font-size: 1.2rem !important;
+        font-size: 18px!important;
+        padding-right: 0px !important;
+    }
+    .b_size{
+        font-size: .8rem !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    .r_size{
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+    .t_size{
+        font-size: 14px !important;
+        padding-right: 0px !important;
+    }
+    .b_size{
+        font-size: .7rem !important;
     }
 }
 .btn_hover:hover{

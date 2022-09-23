@@ -344,16 +344,16 @@ let defaultvalue={"Abdominal Pain":0,
           hasSelectAll={false}
         />
         <div className='fs-5 selected2 d-flex' style={{ fontFamily: "Calibre R" }}>
-          <div className='' style={{ fontFamily: "Calibre R", color: "rgba(34, 54, 69, 0.7)",letterSpacing:'1.2px', minWidth: "max-content",fontWeight:600,paddingRight: "15px", paddingLeft: "5px" }}>Symptoms : </div>
-          {(selected).length > 0 ? <div style={{ paddingBottom: "100px" }}>{arr.map((ele) => {
+          <div className='' style={{ fontFamily: "Calibre R", color: "var(--first-color)",letterSpacing:'1.2px', minWidth: "max-content",fontWeight:600,paddingRight: "15px", paddingLeft: "5px" }}>Symptoms : </div>
+          {(selected).length > 0 ? <div style={{ paddingBottom: "100px",paddingLeft:'10px' }}>{arr.map((ele) => {
             return (<li key={ele} style={{ listStyleType: "square", fontFamily: "Calibre R", color: "rgb(100, 117, 137)" }}>{ele}</li>)
           })}</div> : <div style={{ fontFamily: "Calibre R", color: "rgb(100, 117, 137)" }}>Select Atleast One !</div>}
         </div>
         <div className='' style={{ position: "absolute", bottom: 0, paddingBottom: "0.5rem" }}>
-          <Link to="/"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ backgroundColor: "#F7F7F7", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: 'var(--first-color)', fontFamily: 'SF Mono' }}><BiChevronLeft size={24} style={{ verticalAlign: "-7.5px" }} />  Back</button></Link>
+          <Link to="/"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ background: "#F7F7F7 var(--mdb-gradient)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: 'var(--first-color)', fontFamily: 'SF Mono' }}><BiChevronLeft size={24} style={{ verticalAlign: "-7.5px" }} />  Back</button></Link>
         </div>
         <div className='' style={{ paddingRight: "3rem", position: "absolute", bottom: 0, right: 0, paddingBottom: "0.5rem" }}>
-          <button onClick={HandleStorage} type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ backgroundColor: "var(--first-color)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: '#FFF', fontFamily: 'SF Mono' }}>Next <BiChevronRight size={24} style={{ verticalAlign: "-7.5px" }} /> </button>
+          <button onClick={HandleStorage} type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ background: "var(--first-color) var(--mdb-gradient)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: '#FFF', fontFamily: 'SF Mono' }}>Next <BiChevronRight size={24} style={{ verticalAlign: "-7.5px" }} /> </button>
         </div>
       </div>
 

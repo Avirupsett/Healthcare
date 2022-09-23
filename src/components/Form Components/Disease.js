@@ -51,34 +51,34 @@ export default function Disease() {
         </div>
 
         <div className='fs-4 selected2 d-flex' style={{ fontFamily: "Calibre R" }}>
-          <div className='' style={{ fontFamily: "Calibre R", color: "rgba(34, 54, 69, 0.7)", letterSpacing: '1.2px', minWidth: "max-content", fontWeight: 600, paddingRight: "15px", paddingLeft: "5px" }}>Disease : </div>
+          <div className='' style={{ fontFamily: "Calibre R", color: "var(--first-color)", letterSpacing: '1.2px', minWidth: "max-content", fontWeight: 600, paddingRight: "15px", paddingLeft: "5px" }}>Disease : </div>
           <div style={{ paddingBottom: "20px" }}>
-            {disease === -1 ? <div className="spinner-border text-danger spinner-border-sm" role="status">
+            {disease === -1 ? <div className="spinner-border text-secondary spinner-border-sm" role="status">
               <span className="visually-hidden">Loading...</span>
             </div> :<div style={{color: "rgb(100, 117, 137)"}}>{encoded[disease].Disease}</div>}
           </div>
         </div>
         <div className='fs-4 selected2 d-flex' style={{ fontFamily: "Calibre R" }}>
-          <div className='' style={{ fontFamily: "Calibre R", color: "rgba(34, 54, 69, 0.7)", letterSpacing: '1.2px', minWidth: "max-content", fontWeight: 600, paddingRight: "15px", paddingLeft: "5px" }}>Description : </div>
+          <div className='' style={{ fontFamily: "Calibre R", color: "var(--first-color)", letterSpacing: '1.2px', minWidth: "max-content", fontWeight: 600, paddingRight: "15px", paddingLeft: "5px" }}>Description : </div>
           <div style={{ paddingBottom: "20px" }}>
-            {disease === -1 ? <div className="spinner-border text-danger spinner-border-sm" role="status">
+            {disease === -1 ? <div className="spinner-border text-secondary spinner-border-sm" role="status">
               <span className="visually-hidden">Loading...</span>
             </div> : <div style={{color: "rgb(100, 117, 137)"}}>{encoded[disease].Symptom_Description}</div>}
           </div>
         </div>
         <div className='fs-4 selected2 d-flex' style={{ fontFamily: "Calibre R" }}>
-          <div className='' style={{ fontFamily: "Calibre R", color: "rgba(34, 54, 69, 0.7)", letterSpacing: '1.2px', minWidth: "max-content", fontWeight: 600, paddingRight: "15px", paddingLeft: "5px" }}>Symptoms : </div>
+          <div className='' style={{ fontFamily: "Calibre R", color: "var(--first-color)", letterSpacing: '1.2px', minWidth: "max-content", fontWeight: 600, paddingRight: "15px", paddingLeft: "5px" }}>Symptoms : </div>
           <div style={{ paddingBottom: "100px" }}>
-            {disease === -1 ? <div className="spinner-border text-danger spinner-border-sm" role="status">
+            {disease === -1 ? <div className="spinner-border text-secondary spinner-border-sm" role="status">
               <span className="visually-hidden">Loading...</span>
             </div> :<div style={{color: "rgb(100, 117, 137)"}}>{sessionStorage.getItem("Selected")}</div>}
           </div>
         </div>
         <div className='' style={{ position: "absolute", bottom: 0, paddingBottom: "0.5rem" }}>
-          <Link to="/form/symptoms"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ backgroundColor: "#F7F7F7", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: 'var(--first-color)', fontFamily: 'SF Mono' }}><BiChevronLeft size={24} style={{ verticalAlign: "-7.5px" }} />  Back</button></Link>
+          <Link to="/form/symptoms"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ background: "#F7F7F7 var(--mdb-gradient)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: 'var(--first-color)', fontFamily: 'SF Mono' }}><BiChevronLeft size={24} style={{ verticalAlign: "-7.5px" }} />  Back</button></Link>
         </div>
         <div className='' style={{ paddingRight: "3rem", position: "absolute", bottom: 0, right: 0, paddingBottom: "0.5rem" }}>
-          <Link to="/form/medication"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ backgroundColor: "var(--first-color)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: '#FFF', fontFamily: 'SF Mono' }}>Next <BiChevronRight size={24} style={{ verticalAlign: "-7.5px" }} /> </button></Link>
+          <Link to="/form/medication"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ background: "var(--first-color) var(--mdb-gradient)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: '#FFF', fontFamily: 'SF Mono' }}>Next <BiChevronRight size={24} style={{ verticalAlign: "-7.5px" }} /> </button></Link>
 
         </div>
       </div>

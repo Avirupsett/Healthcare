@@ -14,7 +14,7 @@ export default function Team() {
                         <img className='section-back-icon' src={img} alt="" />
                     </div> */}
                             <div className='pos-rel'>
-                                <h5 className='fs-4 fw-bolder' style={{ marginBottom: "28px", color: "#647589", fontFamily: "SF Mono" }}>Our Team</h5>
+                                <h5 className='fs-4 fw-bolder' style={{ marginBottom: "28px", color: "var(--first-color)", fontFamily: "SF Mono" }}>Our Team</h5>
                                 <h1 className='display-2' style={{ marginBottom: "18px", color: "#223645", fontFamily: "Calibre S", lineHeight: 1.1, letterSpacing: '-2px' }}>A Profesional & Skilled Developer</h1>
                             </div>
                             <div className='pos-rel'>

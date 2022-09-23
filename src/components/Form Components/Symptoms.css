@@ -14,3 +14,6 @@
 .rmsc {
     --rmsc-main: var(--first-color-light) !important;
 }
+li::marker{
+    color: var(--first-color)!important;
+}

@@ -32,7 +32,7 @@ const match2 = useRouteMatch({
   return (
     <div className='steppers' style={{marginTop:window.innerWidth>800?"-20px":"-15px"}}>
        <Box sx={{ '& .MuiStepLabel-root .Mui-completed': {
-            color: '#e1245480', // circle color (COMPLETED)
+            color: 'var(--first-color)', // circle color (COMPLETED)
             fontFamily:"SF Mono",
           },
           '& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel':

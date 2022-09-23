@@ -14,7 +14,7 @@ export default function Department() {
                         <img className='section-back-icon' src={img} alt="" />
                     </div>
                     <div className='pos-rel'>
-                        <h5 className='fs-4 fw-bolder' style={{marginBottom: "28px",color:"#647589",fontFamily:"SF Mono"}}>WorkFlow</h5>
+                        <h5 className='fs-4 fw-bolder' style={{marginBottom: "28px",color:"var(--first-color)",fontFamily:"SF Mono"}}>WorkFlow</h5>
                         <h1 className='display-2' style={{marginBottom:"18px",color:"#223645",fontFamily:"Calibre S",lineHeight:1.1,letterSpacing:'-2px'}}>Managed Your <br/>Heathcare Services</h1>
                     </div>
                     <div className='pos-rel'>
@@ -27,7 +27,7 @@ export default function Department() {
             <div className='col-xl-4 col-lg-6 col-md-6'>
                 <div className='box text-center'>
                     <div className="thumb">
-                        <img src="	https://themepure.net/template/medidove-prv/medidove/img/services/service1.png" alt="" />
+                        <img style={{filter:"hue-rotate(246deg)"}} src="	https://themepure.net/template/medidove-prv/medidove/img/services/service1.png" alt="" />
                     </div>
                     <div className="content">
                         <h3 className='fs-1'>Symptoms</h3>
@@ -40,7 +40,7 @@ export default function Department() {
             <div className='col-xl-4 col-lg-6 col-md-6'>
                 <div className='box text-center'>
                     <div className="thumb">
-                        <img src="	https://themepure.net/template/medidove-prv/medidove/img/services/service1.png" alt="" />
+                        <img style={{filter:"hue-rotate(246deg)"}} src="	https://themepure.net/template/medidove-prv/medidove/img/services/service4.png" alt="" />
                     </div>
                     <div className="content">
                         <h3 className='fs-1'>Prediction</h3>
@@ -53,7 +53,7 @@ export default function Department() {
             <div className='col-xl-4 col-lg-6 col-md-6'>
                 <div className='box text-center'>
                     <div className="thumb">
-                        <img src="	https://themepure.net/template/medidove-prv/medidove/img/services/service1.png" alt="" />
+                        <img style={{filter:"hue-rotate(246deg)"}} src="	https://themepure.net/template/medidove-prv/medidove/img/services/service6.png" alt="" />
                     </div>
                     <div className="content">
                         <h3 className='fs-1'>Precautions</h3>

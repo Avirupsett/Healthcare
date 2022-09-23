@@ -22,8 +22,8 @@
   :root {
     --header-height: 3rem;
     --nav-width: 68px;
-    --first-color: #e12454;
-    --first-color-light: #e3bbcc;
+    --first-color: #1976D2;
+    --first-color-light: #a2cbd3;
     --white-color: #F7F6FB;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
@@ -64,7 +64,7 @@
 
   .header {
     width: 100%;
-    height: calc(var(--header-height)+70px);
+    height: calc(var(--header-height)+55px);
     position: fixed;
     top: 0;
     left: 0;

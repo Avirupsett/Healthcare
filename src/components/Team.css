@@ -7,7 +7,7 @@
     font-family: "Calibre M";
 }
 .team-content h6{
-    color: #e12454;
+    color: var(--first-color);
     font-family: "SF Mono";
 }
 .team-image img{
