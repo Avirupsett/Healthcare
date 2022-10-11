@@ -9,11 +9,11 @@
     position: relative;
 }
 .gray-bg {
-    background: #f4f9fc;
+    background: var(--gray-color);
 }
 .box{
     padding: 53px;
-    background: #fff;
+    background: var(--black-bg);
     transition: .4s;
     border-radius: 5px;
     margin-bottom: 30px;
@@ -30,13 +30,14 @@
     font-family: "Calibre M";
     font-weight: normal;
     line-height: 26px;
-    color: #647589;
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 .content a{
     font-family: "SF Mono";
-    color: #647589;
+    color: var(--text-color);
     font-weight: 500;
     margin-top: 5px;
     display: inline-block;
 }
+

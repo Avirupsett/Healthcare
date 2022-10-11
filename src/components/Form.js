@@ -8,12 +8,15 @@ import Symptoms from './Form Components/Symptoms';
 import { Route, useRouteMatch } from 'react-router-dom';
 import Disease from './Form Components/Disease';
 import Medication from './Form Components/Medication';
+import Details from './Form Components/Details';
+import { AnimatePresence } from 'framer-motion';
 
 
 const steps = [
     'Step 1',
     'Step 2',
     'Step 3',
+    'Step 4'
   ];
 
 export default function Form() {
@@ -27,6 +30,11 @@ const match2 = useRouteMatch({
   strict: true,
   sensitive: true
 });
+const match3 = useRouteMatch({
+  path: "/form/medication",
+  strict: true,
+  sensitive: true
+});
 
   
   return (
@@ -37,7 +45,7 @@ const match2 = useRouteMatch({
           },
           '& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel':
             {
-              color: 'rgb(34, 54, 69)', // Just text label (COMPLETED)
+              color: 'var(--text-color)', // Just text label (COMPLETED)
               fontFamily:"SF Mono",
               fontSize:window.innerWidth>700? "16px":"13px",
               visibility:window.innerWidth>800? "visible":"hidden"
@@ -48,7 +56,7 @@ const match2 = useRouteMatch({
           },
           '& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel':
             {
-              color: 'rgba(34, 54, 69, 0.8)', // Just text label (ACTIVE)
+              color: 'var(--heading-color)', // Just text label (ACTIVE)
               fontWeight:'bold',
               fontFamily:"SF Mono",
               fontSize:window.innerWidth>700? "18px":"14px",
@@ -60,11 +68,12 @@ const match2 = useRouteMatch({
           },
           '& .MuiStepLabel-label.Mui-disabled.MuiStepLabel-alternativeLabel':{
             fontFamily:"SF Mono",
+            color: 'var(--text-color)',
             fontSize:window.innerWidth>700? "16px":"13px",
             visibility:window.innerWidth>800? "visible":"hidden"
           }
           }}>
-      <Stepper activeStep={match?0:match2?1:2} alternativeLabel style={{marginBottom:window.innerWidth>800?"-25px":"-40px"}}>
+      <Stepper activeStep={match?1:match2?2:match3?3:0} alternativeLabel style={{marginBottom:window.innerWidth>800?"-25px":"-40px"}}>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
@@ -72,16 +81,20 @@ const match2 = useRouteMatch({
         ))}
       </Stepper>
     </Box>
-     
-      <Route exact path="/form/symptoms">
+    <AnimatePresence>
+      <Route key={"details"} exact path="/form/details">
+          <Details/>
+      </Route>
+      <Route key={"symptoms"} exact path="/form/symptoms">
           <Symptoms/>
       </Route>
-      <Route exact path="/form/disease">
+      <Route key={"disease"} exact path="/form/disease">
           <Disease/>
       </Route>
-      <Route exact path="/form/medication">
+      <Route key={"medication"} exact path="/form/medication">
           <Medication/>
       </Route>
+    </AnimatePresence>
   
     </div>
   );

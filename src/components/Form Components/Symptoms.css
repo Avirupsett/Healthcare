@@ -17,3 +17,10 @@
 li::marker{
     color: var(--first-color)!important;
 }
+
+.dropdown-heading{
+    background-color: var(--gray-color);
+}
+.dropdown-heading-value{
+    color: var(--text-color);
+}

@@ -2,11 +2,21 @@ import React from 'react'
 import './Team.css'
 // import img from '../assets/section-back-icon.png'
 import img2 from '../assets/section-title-line.png'
+import { motion } from "framer-motion"
 
 export default function Team() {
     return (
         <section className='servcies-area'  style={{ minHeight: "100vh", paddingTop: "115px", paddingBottom: "90px", marginTop: "-10px" }}>
-            <div className='container' id="group">
+            <motion.div className='container' id="group"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ease:"easeInOut", duration: .75 }}
+            variants={{
+              visible: { opacity: [0,1], y: [25, 0] },
+              hidden: { opacity: 0}
+            }}
+            >
                 <div className='row about'>
                     <div className='col-xl-6 col-lg-7 col-md-10'>
                         <div className='section-title pos-rel' style={{ marginBottom: "75px" }}>
@@ -15,10 +25,10 @@ export default function Team() {
                     </div> */}
                             <div className='pos-rel'>
                                 <h5 className='fs-4 fw-bolder' style={{ marginBottom: "28px", color: "var(--first-color)", fontFamily: "SF Mono" }}>Our Team</h5>
-                                <h1 className='display-2' style={{ marginBottom: "18px", color: "#223645", fontFamily: "Calibre S", lineHeight: 1.1, letterSpacing: '-2px' }}>A Profesional & Skilled Developer</h1>
+                                <h1 className='display-2' style={{ marginBottom: "18px", color: "var(--heading-color)", fontFamily: "Calibre S", lineHeight: 1.1, letterSpacing: '-2px' }}>A Profesional & Skilled Developer</h1>
                             </div>
                             <div className='pos-rel'>
-                                <img src={img2} alt="" />
+                                <img src={img2} alt="" style={{filter:"grayScale(1) opacity(0.6) drop-shadow(0 0 0 var(--first-color))"}}/>
                             </div>
                         </div>
                     </div>
@@ -70,7 +80,7 @@ export default function Team() {
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
         </section>
     )
 }

@@ -4,6 +4,8 @@ import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
 import { Link, useHistory } from 'react-router-dom';
 import './Symptoms.css'
 import img2 from '../../assets/section-title-line.png'
+import { motion} from 'framer-motion';
+import Swal from 'sweetalert2'
 
 const options = [{ label: "Abdominal Pain", value: "Abdominal Pain" },
 { label: "Abnormal Menstruation", value: "Abnormal Menstruation" },
@@ -296,8 +298,6 @@ let defaultvalue={"Abdominal Pain":0,
 
      let testarr = []
     selected.forEach((e) => {
-      // let item = {}
-      // item[`${value}`] = 1
        testarr.push(" "+e.label)
       let value = e.label
       defaultvalue[`${value}`]=1
@@ -305,20 +305,11 @@ let defaultvalue={"Abdominal Pain":0,
    
     sessionStorage.setItem("Selected",String(testarr))
     console.log(testarr)
-    // defaultvalue.forEach((sym)=>{
-
-    //   for (let index = 0; index < testarr.length; index++) {
-    //     const element = testarr[index];
-    //      if(Object.keys(element).join()===Object.keys(sym).join()){
-    //      sym[`${Object.keys(sym)}`]=1
-    //      testarr.splice(index,1)
-    //      }
-         
-    //   }
-    // })
     sessionStorage.setItem("Symptoms",JSON.stringify(defaultvalue))
     history.push("/form/disease")
-    // console.log(defaultvalue)
+  }
+  else{
+    Swal.fire('No Symptoms Found !','Select one or more Symptoms to Proceed...','warning')
   }
   }
 
@@ -326,10 +317,16 @@ let defaultvalue={"Abdominal Pain":0,
   return (
 
     <section className='d-flex align-items-start form gray-bg' style={{ minHeight: window.innerWidth>800?"78vh":"76vh", paddingTop: "30px", flexDirection: 'column' }}>
-      <div className="container" >
-        <h1 className='display-5' style={{ fontFamily: "Calibre M", lineHeight: 1.1, color: "rgb(34 54 69 / 90%)", marginBottom: "-2px", letterSpacing: "-0.2px",marginTop:window.innerWidth>700?"5px":"10px" }}>Select Symptoms</h1>
+      <div className="container">
+        <motion.div
+        initial={{ opacity: 0,x:-25 }}
+        animate={{ opacity: 1,x:0 }}
+        exit={{ opacity:0 }}
+        transition={{ duration: .5 }}
+        >
+        <h1 className='display-5' style={{ fontFamily: "Calibre M", lineHeight: 1.1, color: "var(--heading-color)", marginBottom: "-2px", letterSpacing: "-0.2px",marginTop:window.innerWidth>700?"5px":"10px" }}>Select Symptoms</h1>
         <div className='pos-rel' style={{ paddingBottom: "24px" }}>
-          <img src={img2} alt="" />
+          <img src={img2} alt="" style={{filter:"grayScale(1) opacity(0.6) drop-shadow(0 0 0 var(--first-color))"}}/>
         </div>
         <h1 className='fs-6 mb-4 selected' style={{ fontFamily: "SF Mono", color: "rgb(100, 117, 137)" }}>(Selected {(selected).length} out of {options.length})</h1>
 
@@ -346,11 +343,12 @@ let defaultvalue={"Abdominal Pain":0,
         <div className='fs-5 selected2 d-flex' style={{ fontFamily: "Calibre R" }}>
           <div className='' style={{ fontFamily: "Calibre R", color: "var(--first-color)",letterSpacing:'1.2px', minWidth: "max-content",fontWeight:600,paddingRight: "15px", paddingLeft: "5px" }}>Symptoms : </div>
           {(selected).length > 0 ? <div style={{ paddingBottom: "100px",paddingLeft:'10px' }}>{arr.map((ele) => {
-            return (<li key={ele} style={{ listStyleType: "square", fontFamily: "Calibre R", color: "rgb(100, 117, 137)" }}>{ele}</li>)
-          })}</div> : <div style={{ fontFamily: "Calibre R", color: "rgb(100, 117, 137)" }}>Select Atleast One !</div>}
+            return (<li key={ele} style={{ listStyleType: "square", fontFamily: "Calibre R", color: "var(--text-color)" }}>{ele}</li>)
+          })}</div> : <div style={{ fontFamily: "Calibre R", color: "var(--text-color)" }}>Select Atleast One !</div>}
         </div>
+        </motion.div>
         <div className='' style={{ position: "absolute", bottom: 0, paddingBottom: "0.5rem" }}>
-          <Link to="/"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ background: "#F7F7F7 var(--mdb-gradient)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: 'var(--first-color)', fontFamily: 'SF Mono' }}><BiChevronLeft size={24} style={{ verticalAlign: "-7.5px" }} />  Back</button></Link>
+          <Link to="/form/details"><button type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover gray-bg" data-mdb-ripple-color="var(--first-color)" style={{ borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: 'var(--first-color)', fontFamily: 'SF Mono' }}><BiChevronLeft size={24} style={{ verticalAlign: "-7.5px" }} />  Back</button></Link>
         </div>
         <div className='' style={{ paddingRight: "3rem", position: "absolute", bottom: 0, right: 0, paddingBottom: "0.5rem" }}>
           <button onClick={HandleStorage} type="button" className="btn btn-primary rounded-2 ms-auto me-auto me-4 my-4 btn_hover" data-mdb-ripple-color="var(--first-color)" style={{ background: "var(--first-color) var(--mdb-gradient)", borderColor: "var(--first-color)", padding: "9px 20px", fontSize: "14px", marginTop: "20px", color: '#FFF', fontFamily: 'SF Mono' }}>Next <BiChevronRight size={24} style={{ verticalAlign: "-7.5px" }} /> </button>
